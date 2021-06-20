@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<html lang="en">
+<body>
+{% block content %}
+
+
+<hr width="70%" style="background: black;">
+<br>
+{% if heading =='Top Listings' %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-5">
+            <form action="" method="post" style="text-align:center" novalidate role="form">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6">
+                            {{ form.hidden_tag() }}
+                            {{ form.csrf_token() }}
+                            {{ form.csrf_token() }}
+                            {{ wtf.form_field(form.date, class='form-control') }}
+                        </div>
+                        <div class="col-6">
+                            {{ wtf.form_field(form.datetwo, class='form-control') }}
+                        </div>
+                    </div>
+
+                    {% for l in form.town %}
+                    {{ wtf.form_field(l.form.town, class='form-control') }}
+
+                    {% endfor %}
+
+                    <div class="row">
+                        <div class="col-6">
+                            {{ wtf.form_field(form.addrow, class='form-control') }}
+                        </div>
+                        <div class="col-6">
+                            {{ wtf.form_field(form.delrow, class='form-control') }}
+                        </div>
+                    </div>
+                    {{ wtf.form_field(form.submit, class='form-control') }}
+                </div>
+            </form>
+        </div>
+        <div class="col-7 align-self-center">
+            <div style="text-align: center;"> <!-- Block parent element -->
+                <img style="display: inline-block;vertical-align: middle;line-height: normal; max-width: 50vw;max-height: 70vh;"
+                     src="data:image/png;base64, {{image}}" alt="Town"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-8 align-self-center">
+            <form action="" method="post" style="text-align:center" novalidate role="form">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6">
+                            {{ form.hidden_tag() }}
+                            {{ form.csrf_token() }}
+                            {{ form.csrf_token() }}
+                            {{ wtf.form_field(form.date, class='form-control') }}
+                        </div>
+                        <div class="col-6">
+                            {{ wtf.form_field(form.datetwo, class='form-control') }}
+                        </div>
+                    </div>
+
+                    {% for l in form.town %}
+                    {{ wtf.form_field(l.form.town, class="form-control") }}
+                    {% endfor %}
+
+                    <div class="row">
+                        <div class="col-6">
+                            {{ wtf.form_field(form.addrow, class='form-control') }}
+                        </div>
+                        <div class="col-6">
+                            {{ wtf.form_field(form.delrow, class='form-control') }}
+                        </div>
+                    </div>
+
+                    {{ wtf.form_field(form.submit, class='form-control') }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+<br>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+
+<div class="row justify-content-md-center">
+
+
+    {% for category, message in messages %}
+    <p class="{{ category }}">{{ message }}</p>
+    {% endfor %}
+
+</div>
+
+{% endif %}
+{% endwith %}
+
+<hr width="70%" style="background: black;">
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-8 align-self-center">
+            <form action="" method="post" style="text-align:center" novalidate role="form">
+                <div class="col-12">
+
+                    {{ qform.hidden_tag() }}
+                    {{ qform.csrf_token() }}
+                    {{ wtf.form_field(qform.date, class='form-control') }}
+                    {{ wtf.form_field(qform.query, class="form-control") }}
+                    {{ wtf.form_field(qform.submit, class='form-control') }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+
+            <span class="border" style="text-align: center;">
+                    <p  style="text-align: center;">
+                        {% for i in text %}
+                        {% for j in i %}
+                        {{ j }}
+                        {%endfor%}
+                        {%endfor%}
+                    </p>
+
+            </span>
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+<!-- Optional JavaScript -->
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

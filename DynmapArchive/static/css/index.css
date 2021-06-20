@@ -1,0 +1,125 @@
+body {background-color: #DDDBF1;}
+
+
+.navcolor {background-color: #3C4F76;}
+.navtextcolor {color: #AB9F9D;}
+.shadowbox {text-shadow: 2px 2px;}
+
+
+.logo {
+	width: 50;
+	height: auto;
+}
+
+.footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+ }
+
+.accountbutton {
+	height: 6vh;
+    line-height: 6vh;
+	width:50%;
+	border-radius: 25px;
+}
+
+.descriptiontext{
+	font-size:2.75vmin; 
+	color:AB9F9D; 
+	text-align:center; 
+	vertical-align: center;
+
+}
+
+.textfill {
+	
+    line-height: 6vh;
+	border-radius: 15px;
+}
+
+#verticalblend {
+	height: 250px;
+	background-color: #DDDBF1;
+	background-image: linear-gradient(#DDDBF1, #D1BEB0);
+}
+
+
+#landingcolortwo {
+	height: 2000px;
+	background-color: #D1BEB0;
+}
+
+
+
+
+.Image {
+  background-color: #3C4F76;
+  padding: 4px 4px 4px 4px;	
+  opacity: 1;
+  transition: .5s ease;
+  border-radius: 5px;
+  background-position: left top;
+}
+
+.Image:hover {
+  background-color: white;
+  transition: .5s ease;
+}
+
+
+.hoverbutton {
+	background-color: #3C4F76;
+	opacity: 1;
+	transition: .5s ease;
+  }
+
+.hoverbutton:hover {
+	background-color: white;
+	transition: .5s ease;
+  }
+
+.imageborder {
+	padding: 0px 20px 10px 2px;	
+    display: inline-block;
+	
+}
+
+.no-label .control-label {
+display: none;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+
+
+figure {
+    display: inline-block;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+
+}
+
+
+figure figcaption {
+    text-align: center;
+	color: #AB9F9D;
+	padding:2px 2px;
+	font-size: 14px;
+}
+
+
+.peopleCarouselImg img {
+	width: auto;
+	height: 70vmin;
+
+  }
+.carouselTransform {
+	transform: translate(0px, -20px);
+}

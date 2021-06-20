@@ -1,0 +1,1 @@
+web: gunicorn 'DynmapArchive:create_app()'
