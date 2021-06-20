@@ -7,6 +7,12 @@ import base64
 
 mainbp = Blueprint('main', __name__)
 
+import os
+
+if os.name == 'nt':
+    s = "#"
+else:
+    s = "-"
 
 @mainbp.after_request
 def add_header(response):
@@ -29,7 +35,7 @@ def index():
 
 
     if queryForm.validate_on_submit()and queryForm.submit.data == True :
-        Towns = TS(queryForm.date.data.strftime("%#d.%#m.%#y"), [queryForm.query.data])
+        Towns = TS(queryForm.date.data.strftime(F"%{s}d.%{s}m.%{s}y"), [queryForm.query.data])
     if forms.validate_on_submit() and forms.submit.data == True :
 
         towns = []
@@ -41,7 +47,7 @@ def index():
             datelist = []
             for i in range((forms.datetwo.data - date).days + 1):
                 day = date + timedelta(days=i)
-                datelist.append(day.strftime("%#d.%#m.%#y"))
+                datelist.append(day.strftime(F"%{s}d.%{s}m.%{s}y"))
 
             if len(datelist) < 15 and len(datelist) > 0:
                 temp = TG(datelist, towns)
@@ -55,7 +61,7 @@ def index():
 
         else:
 
-            temp = TR(date.strftime("%#d.%#m.%#y"), towns)
+            temp = TR(date.strftime(F"%{s}d.%{s}m.%{s}y"), towns)
             if temp != None and ("Not Found" in temp[0]):
                 flash(F'{temp[0]}; {temp[1]}', "error")
             else:
