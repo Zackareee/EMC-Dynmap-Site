@@ -16,9 +16,9 @@ class TownForm(FlaskForm):
     town = StringField(validators=[InputRequired()])
 
 class MapForm(FlaskForm):
-  date = DateField('Start Date',format=F"%{s}d.%{s}m.%{s}y")
+  date = DateField('Start Date',format=F"%Y-%m-%d")
   town = FieldList(FormField(TownForm), min_entries=1, validators=[Optional()])
-  datetwo = DateField('End Date (Optional)',format=F"%{s}d.%{s}m.%{s}y", validators=[Optional()])
+  datetwo = DateField('End Date (Optional)',format=F"%Y-%m-%d", validators=[Optional()])
   addrow = SubmitField('Add row')
   delrow = SubmitField('Delete row')
   submit = SubmitField("Render Town(s)")
