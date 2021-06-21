@@ -18,5 +18,5 @@ class MapForm(FlaskForm):
 class SearchForm(FlaskForm):
   date = DateField('Date', validators=[InputRequired()])
   query = StringField('Query (Case Sensitive)', validators=[InputRequired()])
-  submit = SubmitField("Find Town(s)")
+  qsubmit = SubmitField("Find Town(s)")
 
