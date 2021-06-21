@@ -4,6 +4,13 @@ from .Download import *
 from .Returns import *
 import numpy as np
 import json
+import os
+
+if os.name == 'nt':
+    s = "#"
+else:
+    s = "-"
+
 
 def TownOutline(TownName,Date,Mode=0,Server="Towny"): #Hachijo
   outputx, outputz, outputcolor, outputstring = [], [], [], []

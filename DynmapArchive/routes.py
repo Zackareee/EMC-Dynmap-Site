@@ -34,7 +34,7 @@ def index():
             forms.town.pop_entry()
 
 
-    if queryForm.validate_on_submit()and queryForm.submit.data == True :
+    if queryForm.validate_on_submit()and queryForm.qsubmit.data == True :
         Towns = TS(queryForm.date.data.strftime(F"%{s}d.%{s}m.%{s}y"), [queryForm.query.data])
     if forms.validate_on_submit() and forms.submit.data == True :
 
