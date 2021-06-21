@@ -102,13 +102,14 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
 
-<div class="row justify-content-md-center">
-
-
-    {% for category, message in messages %}
-    <p class="{{ category }}">{{ message }}</p>
-    {% endfor %}
-
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12 col-md-10 col-lg-8">
+            {% for category, message in messages %}
+            <p style="text-align: center;">{{ message }}</p>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 {% endif %}
@@ -118,16 +119,14 @@
 
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-12 col-md-10 col-lg-8 align-self-center">
+        <div class="col-12 col-md-10 col-lg-8">
             <form action="" method="post" style="text-align:center" novalidate role="form">
-                <div class="col-12">
-
                     {{ qform.hidden_tag() }}
                     {{ qform.csrf_token() }}
                     {{ wtf.form_field(qform.date, class='form-control') }}
                     {{ wtf.form_field(qform.query, class="form-control") }}
                     {{ wtf.form_field(qform.submit, class='form-control') }}
-                </div>
+
             </form>
         </div>
     </div>
