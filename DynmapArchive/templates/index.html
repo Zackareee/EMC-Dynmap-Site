@@ -11,17 +11,17 @@
 {% if heading =='Top Listings' %}
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-5">
+        <div class="col-12 col-md-12 col-lg-5">
             <form action="" method="post" style="text-align:center" novalidate role="form">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             {{ form.hidden_tag() }}
                             {{ form.csrf_token() }}
                             {{ form.csrf_token() }}
                             {{ wtf.form_field(form.date, class='form-control') }}
                         </div>
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             {{ wtf.form_field(form.datetwo, class='form-control') }}
                         </div>
                     </div>
@@ -43,11 +43,17 @@
                 </div>
             </form>
         </div>
-        <div class="col-7 align-self-center">
-            <div style="text-align: center;"> <!-- Block parent element -->
-                <img style="display: inline-block;vertical-align: middle;line-height: normal; max-width: 50vw;max-height: 70vh;"
-                     src="data:image/png;base64, {{image}}" alt="Town"/>
-            </div>
+        <div class="col-12 col-md-12 col-lg-7 align-self-center">
+            <div style="text-align: center;">
+                <div class="d-lg-none"> <!-- HIDE ON LARGE SCREEN -->
+                    <br>
+                    <img style="display: inline-block;vertical-align: middle;line-height: normal; max-width: 80vw;max-height: 100vh;"
+                     src="data:image/png;base64, {{image}}" alt="Town"/></div>
+                </div>
+                <div class="d-none d-lg-block"> <!-- HIDE ON SMALL - MID SCREEN -->
+                    <img style="display: inline-block;vertical-align: middle;line-height: normal; max-width: 50vw;max-height: 90vh;"
+                     src="data:image/png;base64, {{image}}" alt="Town"/></div>
+                </div>
         </div>
     </div>
 </div>
@@ -55,17 +61,17 @@
 {% else %}
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-8 align-self-center">
+        <div class="col-12 col-md-10 col-lg-8 align-self-center">
             <form action="" method="post" style="text-align:center" novalidate role="form">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             {{ form.hidden_tag() }}
                             {{ form.csrf_token() }}
                             {{ form.csrf_token() }}
                             {{ wtf.form_field(form.date, class='form-control') }}
                         </div>
-                        <div class="col-6">
+                        <div class="col-12 col-sm-6">
                             {{ wtf.form_field(form.datetwo, class='form-control') }}
                         </div>
                     </div>
@@ -112,7 +118,7 @@
 
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-8 align-self-center">
+        <div class="col-12 col-md-10 col-lg-8 align-self-center">
             <form action="" method="post" style="text-align:center" novalidate role="form">
                 <div class="col-12">
 
