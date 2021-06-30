@@ -21,8 +21,7 @@ def TownOutline(TownName,Date,Mode=0,Server="Towny"): #Hachijo
       except:
         return "Valid Json Not Found", F"File Format Invalid. {Date}"
       for Town in TownName:
-        if Mode == 0 and not(Town != None and F'{Town}__0' in data['sets']['townyPlugin.markerset']['areas']):
-          return "Town Not Found", Town
+
         for item in data['sets']['townyPlugin.markerset']['areas']:
           if Mode == 0:
 
