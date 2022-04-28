@@ -4,153 +4,243 @@
 <html lang="en">
 <body>
 {% block content %}
-
-
-<hr width="70%" style="background: black;">
-<br>
 {% if heading =='Top Listings' %}
 <div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-12 col-md-12 col-lg-5">
+    <div class="row col-12 justify-content-md-center">
+
             <form action="" method="post" style="text-align:center" novalidate role="form">
-                <div class="col-12">
+                <div class="container-fluid mt-3">
+                    <h3>Town Render</h3>
+                    <p>Fill in the data below.</p>
                     <div class="row">
                         <div class="col-12 col-sm-6">
-                            {{ form.hidden_tag() }}
-                            {{ form.csrf_token() }}
-                            {{ form.csrf_token() }}
-                            {{ wtf.form_field(form.date, class='form-control') }}
+                            {{form.date}}
                         </div>
                         <div class="col-12 col-sm-6">
-                            {{ wtf.form_field(form.datetwo, class='form-control') }}
+                            {{form.datetwo}}
                         </div>
                     </div>
-
                     {% for l in form.town %}
-                    {{ wtf.form_field(l.form.town, class='form-control') }}
-
-                    {% endfor %}
-
                     <div class="row">
-                        <div class="col-6">
-                            {{ wtf.form_field(form.addrow, class='form-control') }}
+                        <div class="col-8">
+                            {{l.form.town}}
                         </div>
-                        <div class="col-6">
-                            {{ wtf.form_field(form.delrow, class='form-control') }}
+                        <div class="col-1 mr-2">
+                            {{form.addrow}}
+                        </div>
+                        <div class="col-1">
+                            {{form.delrow}}
                         </div>
                     </div>
-                    {{ wtf.form_field(form.submit, class='form-control') }}
+                    {% endfor %}
+                </div>
+                <br>
+                <div class="form-check">
+                    <label class="form-check-label">All town names are case sensitive</label>
+                    <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+                </div>
+                <div class="form-button mt-3 mb-3">
+                    {{form.submit}}
                 </div>
             </form>
-        </div>
-        <div class="col-12 col-md-12 col-lg-7 align-self-center">
-            <div style="text-align: center;">
-                <div class="d-lg-none"> <!-- HIDE ON LARGE SCREEN -->
-                    <br>
-                    <img style="display: inline-block;vertical-align: middle;line-height: normal; max-width: 80vw;max-height: 100vh;"
-                     src="data:image/png;base64, {{image}}" alt="Town"/></div>
-                </div>
-                <div class="d-none d-lg-block"> <!-- HIDE ON SMALL - MID SCREEN -->
-                    <img style="display: inline-block;vertical-align: middle;line-height: normal; max-width: 50vw;max-height: 90vh;"
-                     src="data:image/png;base64, {{image}}" alt="Town"/></div>
-                </div>
+
+        <div class="row col-12 justify-content-md-center">
+            <img style="display: inline-block;vertical-align: middle;line-height: normal; max-width: 40vw"
+                         src="data:image/png;base64, {{image}}" class="img-fluid" alt="Town"/>
         </div>
     </div>
 </div>
 
 {% else %}
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-12 col-md-10 col-lg-8 align-self-center">
-            <form action="" method="post" style="text-align:center" novalidate role="form">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
-                            {{ form.hidden_tag() }}
-                            {{ form.csrf_token() }}
-                            {{ form.csrf_token() }}
-                            {{ wtf.form_field(form.date, class='form-control') }}
-                        </div>
-                        <div class="col-12 col-sm-6">
-                            {{ wtf.form_field(form.datetwo, class='form-control') }}
-                        </div>
-                    </div>
+<h3>Town Render</h3>
+<p>Fill in the data below.</p>
 
-                    {% for l in form.town %}
-                    {{ wtf.form_field(l.form.town, class="form-control") }}
-                    {% endfor %}
-
-                    <div class="row">
-                        <div class="col-6">
-                            {{ wtf.form_field(form.addrow, class='form-control') }}
-                        </div>
-                        <div class="col-6">
-                            {{ wtf.form_field(form.delrow, class='form-control') }}
-                        </div>
-                    </div>
-
-                    {{ wtf.form_field(form.submit, class='form-control') }}
-                </div>
-            </form>
+<form action="" method="post" style="text-align:center" novalidate role="form">
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                {{form.date}}
+            </div>
+            <div class="col-12 col-sm-6">
+                {{form.datetwo}}
+            </div>
         </div>
+        {% for l in form.town %}
+        <div class="row">
+            <div class="col-8">
+                {{l.form.town}}
+            </div>
+            <div class="col-1 mr-2">
+                {{form.addrow}}
+            </div>
+            <div class="col-1">
+                {{form.delrow}}
+            </div>
+        </div>
+        {% endfor %}
     </div>
-</div>
+    <br>
+    <div class="form-check">
+        <label class="form-check-label">All town names are case sensitive</label>
+        <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+    </div>
+    <div class="form-button mt-3">
+        {{form.submit}}
+    </div>
+</form>
 
 {% endif %}
-<br>
 
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
 
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-12 col-md-10 col-lg-8">
-            {% for category, message in messages %}
-            <p style="text-align: center;">{{ message }}</p>
-            {% endfor %}
-        </div>
-    </div>
+<div class="text-center mt-2">
+    {% for category, message in messages %}
+    <label>{{ message }}</label>
+    {% endfor %}
 </div>
+
 
 {% endif %}
 {% endwith %}
+{% endblock %}
 
-<hr width="70%" style="background: black;">
 
+
+
+
+
+
+
+
+{% block nationtime %}
+{% if heading =='Top Listings' %}
 <div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-12 col-md-10 col-lg-8">
-            <form action="" method="post" style="text-align:center" novalidate role="form">
-                    {{ qform.hidden_tag() }}
-                    {{ qform.csrf_token() }}
-                    {{ wtf.form_field(qform.date, class='form-control') }}
-                    {{ wtf.form_field(qform.query, class="form-control") }}
-                    {{ wtf.form_field(qform.qsubmit, class='form-control') }}
+    <div class="row col-12 justify-content-md-center">
 
+            <form action="" method="post" style="text-align:center" novalidate role="form">
+                <div class="container-fluid mt-3">
+                    <h3>Town Render</h3>
+                    <p>Fill in the data below.</p>
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            {{nform.date}}
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            {{nform.datetwo}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            {{nform.town}}
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="form-check">
+                    <label class="form-check-label">All nation names are case sensitive</label>
+                    <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+                </div>
+                <div class="form-button mt-3 mb-3">
+                    {{form.submit}}
+                </div>
             </form>
+
+        <div class="row col-12 justify-content-md-center">
+            <img style="display: inline-block;vertical-align: middle;line-height: normal; max-width: 40vw"
+                         src="data:image/png;base64, {{image}}" class="img-fluid" alt="Town"/>
         </div>
     </div>
 </div>
 
-<br>
+{% else %}
+<h3>Nation Render</h3>
+<p>Fill in the data below.</p>
+<form action="" method="post" style="text-align:center" novalidate role="form">
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                {{nform.date}}
+            </div>
+            <div class="col-12 col-sm-6">
+                {{nform.datetwo}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {{nform.town}}
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-check">
+        <label class="form-check-label">All nation names are case sensitive</label>
+        <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+    </div>
+    <div class="form-button mt-3">
+        {{form.submit}}
+    </div>
+</form>
+{% endif %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="text-center mt-2">
+    {% for category, message in messages %}
+    <label>{{ message }}</label>
+    {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{% block townquery %}
+
+<h3>Town Search</h3>
+<p>Fill in the data below.</p>
+<form action="" method="post" style="text-align:center" novalidate role="form">
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-12">
+                {{qform.date}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {{qform.query}}
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-check">
+        <label class="form-check-label">All town names are case sensitive</label>
+        <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+    </div>
+    <div class="form-button mt-3">
+        {{qform.qsubmit}}
+    </div>
+</form>
 
 <div class="container">
     <div class="row justify-content-md-center">
-
-            <span class="border" style="text-align: center;">
-                    <p  style="text-align: center;">
+            <span class="" style="text-align: justify;">
+                    <p  style="text-align: justify;">
                         {% for i in text %}
                         {% for j in i %}
                         {{ j }}
                         {%endfor%}
                         {%endfor%}
                     </p>
-
             </span>
-
     </div>
 </div>
-
 
 {% endblock %}
 

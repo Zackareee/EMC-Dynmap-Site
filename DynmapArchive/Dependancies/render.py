@@ -3,8 +3,10 @@ from .ImageHandling import *
 from .Download import *
 from .Returns import *
 import numpy as np
-import json
+import ujson
+import orjson
 import os
+import time
 
 if os.name == 'nt':
     s = "#"
@@ -12,19 +14,19 @@ else:
     s = "-"
 
 
+def read_json_file(path_to_file):
+  with open(path_to_file) as p:
+    return ujson.load(p)
+
+
 def TownOutline(TownName,Date,Mode=0,Server="Towny"): #Hachijo
   outputx, outputz, outputcolor, outputstring = [], [], [], []
   if path.isfile(F'{str(getcwd())}/DynmapArchive/JSON/{Server}/{Date}/{Date}.json'):
     with open(F'{str(getcwd())}/DynmapArchive/JSON/{Server}/{Date}/{Date}.json') as f:
-      try:
-        data = json.load(f)
-      except:
-        return "Valid Json Not Found", F"File Format Invalid. {Date}"
+      data = ujson.load(f)
       for Town in TownName:
-
         for item in data['sets']['townyPlugin.markerset']['areas']:
           if Mode == 0:
-
             if data['sets']['townyPlugin.markerset']['areas'][item]['label'] == Town and "Shop" not in str(item):
               outputx.append([int(x) for x in data["sets"]["townyPlugin.markerset"]["areas"][F"{item}"]["x"]])
               outputz.append([int(z) for z in data["sets"]["townyPlugin.markerset"]["areas"][F"{item}"]["z"]])
@@ -32,6 +34,8 @@ def TownOutline(TownName,Date,Mode=0,Server="Towny"): #Hachijo
           else:
             if data['sets']['townyPlugin.markerset']['areas'][item]['label'].startswith(Town) and "Shop" not in str(item):
               outputstring.append(data["sets"]["townyPlugin.markerset"]["areas"][F"{item}"]["label"])
+    if len(outputx) == 0:
+      return "Town Not Found",""
     if not Mode == 0:
       return [outputstring]
     else:
@@ -60,22 +64,29 @@ def TownGif(TownNames,TownDate,Server):
     if len(vals) == 4:
       TownX, TownZ, FillColor, Date = vals[0],vals[1],vals[2],vals[3]
     else:
-      return vals[0], vals[1]
-
+      pass
     GifX.append(TownX)
     GifZ.append(TownZ)
     Dates.append(Date)
-  GifZ = [[[GifZ[j][i][f] - (ThreeDMinimumReturn(GifZ) - 16) for f in range(len(GifZ[j][i]))] for i in range(len(GifZ[j]))] for j in range(len(GifZ))]
-  GifX = [[[GifX[j][i][f] - (ThreeDMinimumReturn(GifX) - 16) for f in range(len(GifX[j][i]))] for i in range(len(GifX[j]))] for j in range(len(GifX))]
-  for i in range(len(GifX)):
-    Gif.append(TownRender(GifX[i], GifZ[i], ThreeDMaximumReturn(GifX), ThreeDMaximumReturn(GifZ),Dates[i],[tuple(int(j.lstrip('#')[i:i+2], 16) for i in (0, 2, 4)) for j in FillColor]))
+  Z_array = np.array(GifZ)
+  Z_array = Z_array - (ThreeDMinimumReturn(GifZ) - 16)
+  X_array = np.array(GifX)
+  X_array = X_array - (ThreeDMinimumReturn(GifX) - 16)
+
+  renderlimit = 5000
+  if not(ThreeDMaximumReturn(Z_array) > renderlimit or ThreeDMaximumReturn(X_array) > renderlimit):
+    for i in range(len(X_array)):
+      Gif.append(TownRender(X_array[i], Z_array[i], ThreeDMaximumReturn(X_array), ThreeDMaximumReturn(Z_array),Dates[i],[tuple(int(j.lstrip('#')[i:i+2], 16) for i in (0, 2, 4)) for j in FillColor]))
+  else:
+    Gif = None
   return Gif
 
 
 
 def TG(dates, town):
     Gif = TownGif(town, dates, "Towny")
-
+    if Gif == None:
+      return False
     if type(Gif[0]) is str and "Not Found" in Gif[0]:
       return Gif[0], Gif[1]
     if Gif == None:
@@ -92,7 +103,7 @@ def TR(date,town):
       if 'Not Found' in townarray[0]:
         return townarray[0], townarray[1]
       else:
-        return json.dumps({"error": "true", "message": "Invalid Date"})
+        return ujson.dumps({"error": "true", "message": "Invalid Date"})
 
     else:
       TownX = townarray[0]

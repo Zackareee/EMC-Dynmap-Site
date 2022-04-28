@@ -19,7 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="deae0e4e-190d-4b02-9331-524c8fe69b01" name="Default Changelist" comment="" />
+    <list default="true" id="deae0e4e-190d-4b02-9331-524c8fe69b01" name="Default Changelist" comment="Unix / Windows compatibility">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynmapArchive/Dependancies/Download.py" beforeDir="false" afterPath="$PROJECT_DIR$/DynmapArchive/Dependancies/Download.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynmapArchive/Dependancies/Returns.py" beforeDir="false" afterPath="$PROJECT_DIR$/DynmapArchive/Dependancies/Returns.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynmapArchive/Dependancies/render.py" beforeDir="false" afterPath="$PROJECT_DIR$/DynmapArchive/Dependancies/render.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynmapArchive/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/DynmapArchive/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynmapArchive/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/DynmapArchive/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynmapArchive/static/TempRender.gif" beforeDir="false" afterPath="$PROJECT_DIR$/DynmapArchive/static/TempRender.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynmapArchive/static/TempRender.png" beforeDir="false" afterPath="$PROJECT_DIR$/DynmapArchive/static/TempRender.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynmapArchive/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/DynmapArchive/static/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynmapArchive/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/DynmapArchive/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DynmapArchive/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DynmapArchive/templates/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +47,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1mHEwF1LRzioNz84nNa3W7Qxl1E" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,7 +59,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../iab207-assignment-group-95 (1)/assignment3" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EMCDynmapOld" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
@@ -70,6 +86,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -91,6 +108,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DynmapArchive/routes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -112,6 +130,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bookstore/routes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -129,6 +148,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -139,8 +159,78 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609142352072</updated>
+      <workItem from="1650340868199" duration="13312000" />
+      <workItem from="1650357393201" duration="14377000" />
+      <workItem from="1650436298943" duration="14051000" />
     </task>
+    <task id="LOCAL-00001" summary="Unix / Windows compatibility">
+      <created>1624214142269</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1624214142269</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Mobile Compatible View">
+      <created>1624265431194</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1624265431195</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Error No Longer Off Screen On Mobile">
+      <created>1624265839973</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1624265839973</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Minor Hotfix">
+      <created>1624266243006</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624266243006</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Minor Hotfix">
+      <created>1624266259293</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1624266259293</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Minor Hotfix">
+      <created>1624266350941</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624266350941</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Date fix">
+      <created>1624266834293</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624266834293</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Date fix">
+      <created>1624266965657</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624266965657</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Revert gif town requirement">
+      <created>1625035939890</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1625035939890</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -154,68 +244,50 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Unix / Windows compatibility" />
+    <MESSAGE value="Mobile Compatible View" />
+    <MESSAGE value="Error No Longer Off Screen On Mobile" />
+    <MESSAGE value="Minor Hotfix" />
+    <MESSAGE value="Date fix" />
+    <MESSAGE value="Revert gif town requirement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert gif town requirement" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="2623" y="342" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1624121762926">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="2140" y="475" key="FileChooserDialogImpl" timestamp="1650808989760">
+      <screen x="1080" y="0" width="2560" height="1440" />
     </state>
-    <state x="703" y="342" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1624085121536" />
-    <state x="2623" y="342" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1624121762926" />
-    <state x="786" y="306" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1624183165016">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="2140" y="475" key="FileChooserDialogImpl/0.0.1080.1920/1080.0.2560.1440@1080.0.2560.1440" timestamp="1650808989760" />
+    <state width="2539" height="261" key="GridCell.Tab.0.bottom" timestamp="1650824601289">
+      <screen x="1080" y="0" width="2560" height="1440" />
     </state>
-    <state x="786" y="306" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1624183165016" />
-    <state x="669" y="135" key="#main" timestamp="1624083479548">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="2539" height="261" key="GridCell.Tab.0.bottom/0.0.1080.1920/1080.0.2560.1440@1080.0.2560.1440" timestamp="1650824601289" />
+    <state width="2539" height="261" key="GridCell.Tab.0.center" timestamp="1650824601289">
+      <screen x="1080" y="0" width="2560" height="1440" />
     </state>
-    <state x="669" y="135" key="#main/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1624083479548" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1624084223604">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="2539" height="261" key="GridCell.Tab.0.center/0.0.1080.1920/1080.0.2560.1440@1080.0.2560.1440" timestamp="1650824601289" />
+    <state width="2539" height="261" key="GridCell.Tab.0.left" timestamp="1650824601289">
+      <screen x="1080" y="0" width="2560" height="1440" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1624084223604" />
-    <state width="1899" height="296" key="GridCell.Tab.0.bottom" timestamp="1624193851914">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="2539" height="261" key="GridCell.Tab.0.left/0.0.1080.1920/1080.0.2560.1440@1080.0.2560.1440" timestamp="1650824601289" />
+    <state width="2539" height="261" key="GridCell.Tab.0.right" timestamp="1650824601289">
+      <screen x="1080" y="0" width="2560" height="1440" />
     </state>
-    <state width="1899" height="296" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1624193851914" />
-    <state width="1899" height="296" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1624125855555" />
-    <state width="1899" height="296" key="GridCell.Tab.0.center" timestamp="1624193851914">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="2539" height="261" key="GridCell.Tab.0.right/0.0.1080.1920/1080.0.2560.1440@1080.0.2560.1440" timestamp="1650824601289" />
+    <state x="2067" y="319" width="585" height="801" key="find.popup" timestamp="1650808872851">
+      <screen x="1080" y="0" width="2560" height="1440" />
     </state>
-    <state width="1899" height="296" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1624193851914" />
-    <state width="1899" height="296" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1624125855553" />
-    <state width="1899" height="296" key="GridCell.Tab.0.left" timestamp="1624193851914">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1899" height="296" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1624193851914" />
-    <state width="1899" height="296" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1624125855553" />
-    <state width="1899" height="296" key="GridCell.Tab.0.right" timestamp="1624193851914">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1899" height="296" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1624193851914" />
-    <state width="1899" height="296" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1624125855554" />
-    <state width="1899" height="284" key="GridCell.Tab.1.bottom" timestamp="1623585050211">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1899" height="284" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1623585050211" />
-    <state width="1899" height="284" key="GridCell.Tab.1.center" timestamp="1623585050210">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1899" height="284" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1623585050210" />
-    <state width="1899" height="284" key="GridCell.Tab.1.left" timestamp="1623585050210">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1899" height="284" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1623585050210" />
-    <state width="1899" height="284" key="GridCell.Tab.1.right" timestamp="1623585050210">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1899" height="284" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1623585050210" />
-    <state x="461" y="185" key="SettingsEditor" timestamp="1624194158836">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="461" y="185" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1624194158836" />
-    <state x="1282" y="289" width="585" height="624" key="find.popup" timestamp="1624194200613">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="1282" y="289" width="585" height="624" key="find.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1624194200613" />
-    <state x="3202" y="289" width="585" height="624" key="find.popup/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1624124794262" />
+    <state x="2067" y="319" width="585" height="801" key="find.popup/0.0.1080.1920/1080.0.2560.1440@1080.0.2560.1440" timestamp="1650808872851" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DynmapArchive/Dependancies/render.py</url>
+          <line>112</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

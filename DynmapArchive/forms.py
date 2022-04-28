@@ -9,23 +9,26 @@ if os.name == 'nt':
 else:
     s = "-"
 
-
-
-
 class TownForm(FlaskForm):
-    town = StringField(validators=[InputRequired()])
+    town = StringField(validators=[InputRequired()], render_kw={'class':'form-control', 'placeholder':'Town Name'})
 
-class MapForm(FlaskForm):
-  date = DateField('Start Date',format=F"%Y-%m-%d")
+class TownMapForm(FlaskForm):
+  date = DateField(format=F"%Y-%m-%d", validators=[InputRequired()], render_kw={'class':'form-control'})
+  datetwo = DateField('End Date (Optional)', format=F"%Y-%m-%d", validators=[Optional()],
+                      render_kw={'class': 'form-control'})
   town = FieldList(FormField(TownForm), min_entries=1, validators=[Optional()])
-  datetwo = DateField('End Date (Optional)',format=F"%Y-%m-%d", validators=[Optional()])
-  addrow = SubmitField('Add row')
-  delrow = SubmitField('Delete row')
-  submit = SubmitField("Render Town(s)")
+  addrow = SubmitField('+', render_kw={'class':'btn btn-primary'})
+  delrow = SubmitField('-', render_kw={'class':'btn btn-primary'})
+  submit = SubmitField('Render', render_kw={'class':'btn btn-primary'})
 
+class NationMapForm(FlaskForm):
+  date = DateField(format=F"%Y-%m-%d", validators=[InputRequired()], render_kw={'class':'form-control'})
+  datetwo = DateField('End Date (Optional)', format=F"%Y-%m-%d", validators=[Optional()],
+                      render_kw={'class': 'form-control'})
+  town = StringField(validators=[InputRequired()], render_kw={'class':'form-control', 'placeholder':'Nation Name'})
+  submit = SubmitField('Render', render_kw={'class':'btn btn-primary'})
 
 class SearchForm(FlaskForm):
-  date = DateField('Date', validators=[InputRequired()])
-  query = StringField('Query (Case Sensitive)', validators=[InputRequired()])
-  qsubmit = SubmitField("Find Town(s)")
-
+  date = DateField(format=F"%Y-%m-%d", validators=[InputRequired()], render_kw={'class':'form-control'} )
+  query = StringField('', validators=[InputRequired()], render_kw={'class':'form-control', 'placeholder':'Search Term'})
+  qsubmit = SubmitField("Search", render_kw={'class':'btn btn-primary'} )

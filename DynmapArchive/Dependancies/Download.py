@@ -8,8 +8,6 @@ def MarkerDownload(Server):
     if not path.exists(F"{str(getcwd())}/JSON/{str(Server)}/{str(datetime.today().strftime('%-d.%-m.%y'))}/{str(datetime.today().strftime('%-d.%-m.%y'))}.json"):
         if Server == "Towny":
             DownloadedFile = requests.get('https://earthmc.net/map/tiles/_markers_/marker_earth.json', headers=Headers)
-        else:
-            DownloadedFile = requests.get('https://earthmc.net/map/beta/tiles/_markers_/marker_randomworld1.json', headers=Headers)
         if '502: Bad gateway' in DownloadedFile:
             print("502: Bad gateway")
             MarkerDownload(Server)
